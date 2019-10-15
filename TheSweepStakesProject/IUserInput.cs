@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace TheSweepStakesProject
 {
-    interface IUserInterface
+    interface IUserInput
     {
+        void FirstName();
+
+        void LastName();
+
+        void Email();
+
+        void RegistrationNumber();
+        
+
     }
 }
