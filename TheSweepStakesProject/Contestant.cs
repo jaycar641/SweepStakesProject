@@ -13,6 +13,14 @@ namespace TheSweepStakesProject
         private string emailAddress;
         private int registrationNumber;
 
+        public Contestant()
+        {
+            FirstName();
+            LastName();
+            Email();
+            RegistrationNumber();
+            //run user interface to ask for information
+        }
        public void FirstName()
         {
             Console.WriteLine("Enter Your First Name");

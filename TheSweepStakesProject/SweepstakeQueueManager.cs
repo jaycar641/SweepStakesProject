@@ -8,22 +8,23 @@ namespace TheSweepStakesProject
 {
     class SweepstakeQueueManager : ISweepstakesManager
     {
-        private string name;
-
-        public SweepstakeQueueManager(List<Sweepstake> list, string name)
+        Dictionary<int, Sweepstake> sweepstakeList = new Dictionary<int, Sweepstake>();
+        public SweepstakeQueueManager()
         {
-            this.name = name;
+        
         }
 
-        void InsertSweepstake(Sweepstake sweepstakes)
-        {
 
+        void InsertSweepstake(Sweepstake sweepstake)
+        {
+            sweepstakeList.Add(0, sweepstake);
         }
 
-        Sweepstake GetSweepStake()
+        Sweepstake GetSweepStake(Sweepstake sweepstake)
         {
-
-
+           sweepstake = sweepstakeList[0];
+            
+            return sweepstake;
         }
     }
 }

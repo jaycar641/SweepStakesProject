@@ -8,15 +8,31 @@ namespace TheSweepStakesProject
 {
     class Marketing
     {
-        private Sweepstake sweepstake = new Sweepstake();
+        private Sweepstake sweepstake;
 
-
+        ////////Constructors
         public Marketing()
         {
-            this.sweepstake = new Sweepstake();
+            this.sweepstake = new Sweepstake("Sweepstake");
+            ChooseManager();
+        }
+            
+           ////// Properties
+        public Sweepstake Sweepstake
+        {
+            get
+            {
+                return this.sweepstake;
+            }
 
+            set
+            {
+                value = this.sweepstake;
+            }
         }
 
+
+        /////////////Function
         public void ChooseManager()
         {
             Console.WriteLine("Choose your manager: Queue, or Stack");
@@ -25,29 +41,24 @@ namespace TheSweepStakesProject
             switch(managerChoice) //could potential return a dictionary with manager and manager type
             {
                 case "Queue":
-                    new SweepstakeQueueManager();
+                    CreateManager(new SweepstakeQueueManager());
                     break;
                 case "Stack":
-                    new SweepstakeStackManager();
+                    CreateManager(new SweepstakeStackManager());
                     break;
                 
             }
 
         }
 
-       public Sweepstake Sweepstake
+        public void CreateManager(ISweepstakesManager manager)
         {
-            get
-            {
-                return sweepstake;
-            }
+           
+           manager.InsertSweepstake(Sweepstake);
+            manager.GetSweepStake();
 
-            set 
-           {
-                value = sweepstake;
-            }
         }
-
+       
 
 
 
