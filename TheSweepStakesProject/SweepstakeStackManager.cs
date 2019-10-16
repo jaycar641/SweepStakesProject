@@ -8,5 +8,9 @@ namespace TheSweepStakesProject
 {
     class SweepstakeStackManager :ISweepstakesManager
     {
+        public SweepstakeStackManager(List<Sweepstake> list, string name)
+        {
+
+        }
     }
 }

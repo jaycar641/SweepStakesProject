@@ -8,5 +8,10 @@ namespace TheSweepStakesProject
 {
     class SweepstakeQueueManager : ISweepstakesManager
     {
+
+        public SweepstakeQueueManager(List<Sweepstake> list, string name)
+        {
+
+        }
     }
 }

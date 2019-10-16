@@ -9,7 +9,7 @@ namespace TheSweepStakesProject
     class Sweepstake
     {
         public string name;
-        public Sweepstake()
+        public Sweepstake(List<Contestant> contestants, List<int> regisrationNumbers)//pass through contestant, registration number, name
         {
             this.name = name;
 
