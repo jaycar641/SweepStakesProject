@@ -13,12 +13,25 @@ namespace TheSweepStakesProject
         private string emailAddress;
         private int registrationNumber;
 
+
+        public int GetRegistrationNumber
+        {
+            get
+            {
+                return registrationNumber;
+            }
+
+            set
+            {
+                value = registrationNumber;
+
+            }
+        }
         public Contestant()
         {
             FirstName();
             LastName();
             Email();
-            RegistrationNumber();
             //run user interface to ask for information
         }
        public void FirstName()

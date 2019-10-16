@@ -8,9 +8,22 @@ namespace TheSweepStakesProject
 {
     class SweepstakeStackManager :ISweepstakesManager
     {
-        public SweepstakeStackManager(List<Sweepstake> list, string name)
+        public SweepstakeStackManager()
         {
 
         }
+
+
+        public void InsertSweepstake(Sweepstake sweepstakes)
+        {
+
+        }
+
+        public Sweepstake GetSweepStake()
+        {
+
+            return 
+        }
+
     }
 }

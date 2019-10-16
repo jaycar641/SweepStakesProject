@@ -55,7 +55,7 @@ namespace TheSweepStakesProject
         {
            
            manager.InsertSweepstake(Sweepstake);
-            manager.GetSweepStake();
+           
 
         }
        

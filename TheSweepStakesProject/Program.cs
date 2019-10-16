@@ -10,6 +10,9 @@ namespace TheSweepStakesProject
     {
         static void Main(string[] args)
         {
+            Marketing marketing = new Marketing();
+          
+
         }
     }
 }
