@@ -45,7 +45,7 @@
   <ItemGroup>
     <Compile Include="Contestant.cs" />
     <Compile Include="ISweepstakesManager.cs" />
-    <Compile Include="IUserInterface.cs" />
+    <Compile Include="IUserInput.cs" />
     <Compile Include="Marketing.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
