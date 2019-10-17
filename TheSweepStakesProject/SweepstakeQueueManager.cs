@@ -8,29 +8,23 @@ namespace TheSweepStakesProject
 {
     class SweepstakeQueueManager : ISweepstakesManager
     {   
-        //private Sweepstake currentSweepstake;
         Queue<Sweepstake> sweepstakeList = new Queue<Sweepstake>();
-        public SweepstakeQueueManager()
-        {
-           
-        }
-
 
         public void InsertSweepstake(Sweepstake sweepstake)
         {
-            ///////////////can decide many sweepstakes to hold in queue
+            
 
-            sweepstakeList.Enqueue(sweepstake);//change to queue
+            sweepstakeList.Enqueue(sweepstake);
             Sweepstake Sweepstake = GetSweepStake();
 
             sweepstake.StartSweepstake();
 
         }
 
-        public Sweepstake GetSweepStake()//where does the sweepstake.start go??????????????????????????, and where does it return who needs it
+        public Sweepstake GetSweepStake()
         {
 
-            Sweepstake sweepstake = sweepstakeList.Dequeue();//this instantiates the sweepstake
+            Sweepstake sweepstake = sweepstakeList.Dequeue();
 
             return sweepstake;
         }

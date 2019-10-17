@@ -9,23 +9,19 @@ namespace TheSweepStakesProject
     class SweepstakeStackManager :ISweepstakesManager
     {
         Stack<Sweepstake> sweepstakeList = new Stack<Sweepstake>();
-        public SweepstakeStackManager()
-        {
-            Sweepstake Sweepstake = GetSweepStake();
-            Sweepstake.StartSweepstake();
-        }      
-
+     
 
         public void InsertSweepstake(Sweepstake sweepstake)
         {
-            ///////////////can decide many sweepstakes to hold in queue
-            sweepstakeList.Push(sweepstake);//change to queue
+            sweepstakeList.Push(sweepstake);
+             Sweepstake Sweepstake = GetSweepStake();
 
+            sweepstake.StartSweepstake();
         }
 
-        public Sweepstake GetSweepStake()//where does the sweepstake.start go??????????????????????????, and where does it return who needs it
+        public Sweepstake GetSweepStake()
         {
-            Sweepstake sweepstake = sweepstakeList.Pop();//this instantiates the sweepstake
+            Sweepstake sweepstake = sweepstakeList.Pop();
 
             return sweepstake;
         }

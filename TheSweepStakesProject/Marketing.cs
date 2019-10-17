@@ -10,14 +10,14 @@ namespace TheSweepStakesProject
     {
         private Sweepstake sweepstake;
 
-        ////////Constructors
+    
         public Marketing()
         {
-            this.sweepstake = new Sweepstake("name"); //////fix number system
+            this.sweepstake = new Sweepstake("name"); 
             ChooseManager();
         }
             
-           ////// Properties
+           
         public Sweepstake Sweepstake
         {
             get
@@ -32,13 +32,12 @@ namespace TheSweepStakesProject
         }
 
 
-        /////////////Function
         public void ChooseManager()
         {
             Console.WriteLine("Choose your manager: Queue, or Stack");
             string managerChoice = Console.ReadLine();
 
-            switch(managerChoice) //could potential return a dictionary with manager and manager type
+            switch(managerChoice) 
             {
                 case "Queue":
                     CreateManager(new SweepstakeQueueManager());

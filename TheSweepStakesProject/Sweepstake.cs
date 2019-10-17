@@ -13,7 +13,7 @@ namespace TheSweepStakesProject
         Random random = new Random();
 
         int numberOfContestants;
-        public Sweepstake(string name)//pass through contestant list, registration number, name
+        public Sweepstake(string name)
         {
             this.name = name;
            this.numberOfContestants = random.Next(0, 20);
@@ -29,9 +29,8 @@ namespace TheSweepStakesProject
 
             }
 
-               //picks winner from the list
             Contestant display = PickWinner();
-            PrintContestantInfo(display);      // prints the winner out;
+            PrintContestantInfo(display);
 
         }
 
@@ -45,21 +44,19 @@ namespace TheSweepStakesProject
 
         public Contestant PickWinner()
         {
-            int contestantNumber = random.Next(0, numberOfContestants);///uses
-            Contestant winner = new Contestant();
-
-
-            foreach (int key in contestants.Keys)///registration#, contestant
+            int contestantNumber = random.Next(0, numberOfContestants);
+            int count = 0;
+            Contestant winner = null;
+            foreach (int key in contestants.Keys)
             {
-
-                if (key == contestants[numberOfContestants].GetRegistrationNumber)
+                int regNumber = contestants[key].GetRegistrationNumber;
+                if (count == contestantNumber)
                 {
                     winner = contestants[key];
-
+                    return winner;
                 }
-                  
+                count++;
              }
-
             return winner;
 
         }
@@ -69,6 +66,7 @@ namespace TheSweepStakesProject
             Console.WriteLine("And the winner is.........." + contestant.GetFirstName + " " + contestant.GetLastName);
             Console.WriteLine("Email " + contestant.GetEmail);
             Console.WriteLine("Registration Number " + contestant.GetRegistrationNumber);
+            Console.ReadKey();
         }
 
     }

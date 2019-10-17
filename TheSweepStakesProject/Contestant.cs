@@ -12,20 +12,21 @@ namespace TheSweepStakesProject
         private string lastName;
         private string emailAddress;
         private int registrationNumber;
+        Random random = new Random();
 
 
-        
+
+
         public Contestant()
         {
             FirstName();
             LastName();
             Email();
             RegistrationNumber();
-            //run user interface to ask for information
         }
 
 
-        //Properties
+        
         public string GetFirstName 
        {
             get 
@@ -84,25 +85,24 @@ namespace TheSweepStakesProject
         public void FirstName()
         {
             Console.WriteLine("Enter Your First Name");
-            GetFirstName = Console.ReadLine();
+            firstName = Console.ReadLine();
         }
 
         public void LastName()
         {
-            Console.WriteLine("Enter Your Second Name");
-            GetLastName = Console.ReadLine();
+            Console.WriteLine("Enter Your Last Name");
+            lastName = Console.ReadLine();
         }
 
         public void Email()
         {
             Console.WriteLine("Enter Your Email Address");
-            GetEmail = Console.ReadLine();
+            emailAddress = Console.ReadLine();
         }
 
         public void RegistrationNumber()
         {
-            Random random = new Random();
-            GetRegistrationNumber = random.Next(1000000, 9999999);
+                registrationNumber = random.Next(0, 1000);
        }
 
 
