@@ -10,11 +10,12 @@ namespace TheSweepStakesProject
     {
         public string name;
         Dictionary<int, Contestant> contestants = new Dictionary<int, Contestant>();
+        Random random = new Random();
+
         int numberOfContestants;
         public Sweepstake()//pass through contestant list, registration number, name
         {
             this.name = name;
-            Random random = new Random();
            this.numberOfContestants = random.Next(0, 20);
             
         }
@@ -24,31 +25,46 @@ namespace TheSweepStakesProject
             for (int i = 0; i < numberOfContestants; i++)
             {
                 Contestant contestant = new Contestant();
-                contestants.Add(contestant.GetRegistrationNumber, contestant);
                 RegisterContestant(contestants[i]);
+                contestants.Add(contestant.GetRegistrationNumber, contestant);
 
             }
 
-            PickWinner();   //picks winner from the list
-            PrintContestantInfo();      // prints the winner out;
+               //picks winner from the list
+            Contestant display = PickWinner();
+            PrintContestantInfo(display);      // prints the winner out;
 
         }
 
         public void RegisterContestant(Contestant contestant)
         {
-            //adding contestants to a list
+            Console.WriteLine("Congratulations " + contestant.GetFirstName + " " + "you are now registered");
+            Console.WriteLine("Your registration number is " + contestant.GetRegistrationNumber);
 
         }
 
         public Contestant PickWinner()
         {
+            int contestantNumber = random.Next(0, numberOfContestants);
+            Contestant winner = new Contestant();
+            for(int i = 0; i< numberOfContestants; i++)
+            {
+                if (i == contestantNumber)
+                {
+                    winner = contestants[i];///loop through dictionary
+                }
 
-            return;
+            }
+
+            return winner;
+
         }
 
         public void PrintContestantInfo(Contestant contestant)
         {
-
+            Console.WriteLine("And the winner is.........." + contestant.GetFirstName + " " + contestant.GetLastName);
+            Console.WriteLine("Email " + contestant.GetEmail);
+            Console.WriteLine("Registration Number " + contestant.GetRegistrationNumber);
         }
 
     }

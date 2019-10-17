@@ -6,13 +6,67 @@ using System.Threading.Tasks;
 
 namespace TheSweepStakesProject
 {
-    class Contestant: IUserInput
+    class Contestant : IUserInput
     {
         private string firstName;
         private string lastName;
         private string emailAddress;
         private int registrationNumber;
 
+
+        
+        public Contestant()
+        {
+            FirstName();
+            LastName();
+            Email();
+            RegistrationNumber();
+            //run user interface to ask for information
+        }
+
+
+        //Properties
+        public string GetFirstName 
+       {
+            get 
+            {
+                return this.firstName;
+            }
+
+            set 
+            {
+                value = this.firstName;
+            }
+        
+        }
+
+        public string GetLastName
+        {
+            get
+            {
+                return this.lastName;
+            }
+
+            set
+            {
+                value = this.lastName;
+            }
+
+        }
+
+        public string GetEmail
+        {
+            get
+            {
+                return this.emailAddress;
+            }
+
+            set
+            {
+                value = this.emailAddress;
+            }
+
+        }
 
         public int GetRegistrationNumber
         {
@@ -27,36 +81,29 @@ namespace TheSweepStakesProject
 
             }
         }
-        public Contestant()
-        {
-            FirstName();
-            LastName();
-            Email();
-            //run user interface to ask for information
-        }
-       public void FirstName()
+        public void FirstName()
         {
             Console.WriteLine("Enter Your First Name");
-            firstName = Console.ReadLine();
+            GetFirstName = Console.ReadLine();
         }
 
         public void LastName()
         {
             Console.WriteLine("Enter Your Second Name");
-            lastName = Console.ReadLine();
+            GetLastName = Console.ReadLine();
         }
 
         public void Email()
         {
-            Console.WriteLine("Enter Your Second Name");
-            emailAddress = Console.ReadLine();
+            Console.WriteLine("Enter Your Email Address");
+            GetEmail = Console.ReadLine();
         }
 
         public void RegistrationNumber()
         {
-            //get registration #
-            registrationNumber = 5;
-        }
+            Random random = new Random();
+            GetRegistrationNumber = random.Next(1000000, 9999999);
+       }
 
 
 
