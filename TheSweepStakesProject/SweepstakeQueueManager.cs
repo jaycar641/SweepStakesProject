@@ -12,8 +12,6 @@ namespace TheSweepStakesProject
         Queue<Sweepstake> sweepstakeList = new Queue<Sweepstake>();
         public SweepstakeQueueManager()
         {
-           Sweepstake Sweepstake = GetSweepStake();
-            Sweepstake.StartSweepstake();
            
         }
 
@@ -21,14 +19,19 @@ namespace TheSweepStakesProject
         public void InsertSweepstake(Sweepstake sweepstake)
         {
             ///////////////can decide many sweepstakes to hold in queue
+
             sweepstakeList.Enqueue(sweepstake);//change to queue
+            Sweepstake Sweepstake = GetSweepStake();
+
+            sweepstake.StartSweepstake();
 
         }
 
         public Sweepstake GetSweepStake()//where does the sweepstake.start go??????????????????????????, and where does it return who needs it
         {
+
             Sweepstake sweepstake = sweepstakeList.Dequeue();//this instantiates the sweepstake
-           
+
             return sweepstake;
         }
 
