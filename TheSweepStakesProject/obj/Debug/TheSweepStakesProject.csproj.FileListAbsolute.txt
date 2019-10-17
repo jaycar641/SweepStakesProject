@@ -1,0 +1,6 @@
+C:\Users\Jacob\Desktop\TheSweepStakesProject\TheSweepStakesProject\obj\Debug\TheSweepStakesProject.csprojAssemblyReference.cache
+C:\Users\Jacob\Desktop\TheSweepStakesProject\TheSweepStakesProject\bin\Debug\TheSweepStakesProject.exe.config
+C:\Users\Jacob\Desktop\TheSweepStakesProject\TheSweepStakesProject\bin\Debug\TheSweepStakesProject.exe
+C:\Users\Jacob\Desktop\TheSweepStakesProject\TheSweepStakesProject\bin\Debug\TheSweepStakesProject.pdb
+C:\Users\Jacob\Desktop\TheSweepStakesProject\TheSweepStakesProject\obj\Debug\TheSweepStakesProject.exe
+C:\Users\Jacob\Desktop\TheSweepStakesProject\TheSweepStakesProject\obj\Debug\TheSweepStakesProject.pdb

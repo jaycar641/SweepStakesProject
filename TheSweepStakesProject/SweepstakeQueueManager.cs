@@ -7,28 +7,27 @@ using System.Threading.Tasks;
 namespace TheSweepStakesProject
 {
     class SweepstakeQueueManager : ISweepstakesManager
-    {
+    {   
         //private Sweepstake currentSweepstake;
-
-        Dictionary<int, Sweepstake> sweepstakeList = new Dictionary<int, Sweepstake>();
+        Queue<Sweepstake> sweepstakeList = new Queue<Sweepstake>();
         public SweepstakeQueueManager()
         {
            Sweepstake Sweepstake = GetSweepStake();
             Sweepstake.StartSweepstake();
            
-
         }
 
 
-        void InsertSweepstake(Sweepstake sweepstake)
+        public void InsertSweepstake(Sweepstake sweepstake)
         {
-            sweepstakeList.Add(0, sweepstake);//change to queue
+            ///////////////can decide many sweepstakes to hold in queue
+            sweepstakeList.Enqueue(sweepstake);//change to queue
 
         }
 
-        Sweepstake GetSweepStake()//where does the sweepstake.start go??????????????????????????, and where does it return who needs it
+        public Sweepstake GetSweepStake()//where does the sweepstake.start go??????????????????????????, and where does it return who needs it
         {
-            Sweepstake sweepstake = sweepstakeList[0];//this instantiates the sweepstake
+            Sweepstake sweepstake = sweepstakeList.Dequeue();//this instantiates the sweepstake
            
             return sweepstake;
         }

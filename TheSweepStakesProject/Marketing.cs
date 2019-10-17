@@ -13,7 +13,7 @@ namespace TheSweepStakesProject
         ////////Constructors
         public Marketing()
         {
-            this.sweepstake = new Sweepstake("Sweepstake");
+            this.sweepstake = new Sweepstake("name"); //////fix number system
             ChooseManager();
         }
             
@@ -22,12 +22,12 @@ namespace TheSweepStakesProject
         {
             get
             {
-                return this.sweepstake;
+                return sweepstake;
             }
 
             set
             {
-                value = this.sweepstake;
+                value = sweepstake;
             }
         }
 

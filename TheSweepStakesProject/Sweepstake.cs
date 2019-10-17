@@ -13,7 +13,7 @@ namespace TheSweepStakesProject
         Random random = new Random();
 
         int numberOfContestants;
-        public Sweepstake()//pass through contestant list, registration number, name
+        public Sweepstake(string name)//pass through contestant list, registration number, name
         {
             this.name = name;
            this.numberOfContestants = random.Next(0, 20);
@@ -25,8 +25,7 @@ namespace TheSweepStakesProject
             for (int i = 0; i < numberOfContestants; i++)
             {
                 Contestant contestant = new Contestant();
-                RegisterContestant(contestants[i]);
-                contestants.Add(contestant.GetRegistrationNumber, contestant);
+                RegisterContestant(contestant);
 
             }
 
@@ -38,6 +37,7 @@ namespace TheSweepStakesProject
 
         public void RegisterContestant(Contestant contestant)
         {
+            contestants.Add(contestant.GetRegistrationNumber, contestant);
             Console.WriteLine("Congratulations " + contestant.GetFirstName + " " + "you are now registered");
             Console.WriteLine("Your registration number is " + contestant.GetRegistrationNumber);
 
@@ -45,8 +45,9 @@ namespace TheSweepStakesProject
 
         public Contestant PickWinner()
         {
-            int contestantNumber = random.Next(0, numberOfContestants);
+            int contestantNumber = random.Next(0, numberOfContestants);///uses contestant number to create a random number
             Contestant winner = new Contestant();
+           
             for(int i = 0; i< numberOfContestants; i++)
             {
                 if (i == contestantNumber)
