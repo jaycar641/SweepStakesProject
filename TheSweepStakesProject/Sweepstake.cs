@@ -45,17 +45,20 @@ namespace TheSweepStakesProject
 
         public Contestant PickWinner()
         {
-            int contestantNumber = random.Next(0, numberOfContestants);///uses contestant number to create a random number
+            int contestantNumber = random.Next(0, numberOfContestants);///uses
             Contestant winner = new Contestant();
-           
-            for(int i = 0; i< numberOfContestants; i++)
-            {
-                if (i == contestantNumber)
-                {
-                    winner = contestants[i];///loop through dictionary
-                }
 
-            }
+
+            foreach (int key in contestants.Keys)///registration#, contestant
+            {
+
+                if (key == contestants[numberOfContestants].GetRegistrationNumber)
+                {
+                    winner = contestants[key];
+
+                }
+                  
+             }
 
             return winner;
 
