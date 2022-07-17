@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,11 +13,8 @@ namespace TheSweepStakesProject
         public void InsertSweepstake(Sweepstake sweepstake)
         {
             
+          sweepstakeList.Enqueue(sweepstake);
 
-            sweepstakeList.Enqueue(sweepstake);
-            Sweepstake Sweepstake = GetSweepStake();
-
-            sweepstake.StartSweepstake();
 
         }
 
@@ -25,7 +22,7 @@ namespace TheSweepStakesProject
         {
 
             Sweepstake sweepstake = sweepstakeList.Dequeue();
-
+                       sweepstake.StartSweepstake();
             return sweepstake;
         }
 

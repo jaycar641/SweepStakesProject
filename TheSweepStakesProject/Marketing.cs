@@ -1,4 +1,5 @@
-﻿using System;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace TheSweepStakesProject
         }
             
            
-        public Sweepstake Sweepstake
+        public Sweepstake sweepValue
         {
             get
             {
@@ -40,10 +41,16 @@ namespace TheSweepStakesProject
             switch(managerChoice) 
             {
                 case "Queue":
-                    CreateManager(new SweepstakeQueueManager());
+                   SweepstakeQueueManager queueManager = new SweepstakeQueueManager();
+                    CreateManager(queueManager);
                     break;
                 case "Stack":
-                    CreateManager(new SweepstakeStackManager());
+                    SweepstakeStackManager stackManager = new SweepstakeStackManager();
+                    CreateManager(stackManager);
+                    break;
+                default:
+                    Console.WriteLine("Please try again");
+                    ChooseManager();
                     break;
                 
             }
@@ -52,9 +59,12 @@ namespace TheSweepStakesProject
 
         public void CreateManager(ISweepstakesManager manager)
         {
-           
-           manager.InsertSweepstake(Sweepstake);
-           
+           manager.InsertSweepstake(this.sweepstake);
+            
+           this.sweepstake = manager.GetSweepStake ();    
+            this.sweepstake.Complete= true;
+            manager.InsertSweepstake(this.sweepstake);
+            
 
         }
        

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,13 +11,29 @@ namespace TheSweepStakesProject
         public string name;
         Dictionary<int, Contestant> contestants = new Dictionary<int, Contestant>();
         Random random = new Random();
+       private bool complete = false;
 
-        int numberOfContestants;
+       public int numberOfContestants;
+        
         public Sweepstake(string name)
         {
             this.name = name;
            this.numberOfContestants = random.Next(0, 20);
             
+        }
+
+        public bool Complete
+        {
+            get
+            {
+                return complete;
+            }
+
+            set
+            {
+                value = complete;
+
+            }
         }
 
         public void StartSweepstake()

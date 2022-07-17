@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,14 +14,14 @@ namespace TheSweepStakesProject
         public void InsertSweepstake(Sweepstake sweepstake)
         {
             sweepstakeList.Push(sweepstake);
-             Sweepstake Sweepstake = GetSweepStake();
 
-            sweepstake.StartSweepstake();
+            
         }
 
         public Sweepstake GetSweepStake()
         {
             Sweepstake sweepstake = sweepstakeList.Pop();
+           sweepstake.StartSweepstake();
 
             return sweepstake;
         }
