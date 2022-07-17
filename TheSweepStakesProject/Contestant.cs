@@ -12,64 +12,63 @@ namespace TheSweepStakesProject
         private string lastName;
         private string emailAddress;
         private int registrationNumber;
-        Random random = new Random();
-
+        
 
 
 
         public Contestant()
         {
-            FirstName();
-            LastName();
-            Email();
-            RegistrationNumber();
+            TheFirstName();
+            TheLastName();
+            TheEmail();
+            TheRegistrationNumber();
         }
 
 
         
-        public string GetFirstName 
+        public string FirstName 
        {
             get 
             {
-                return this.firstName;
+                return firstName;
             }
 
             set 
             {
-                value = this.firstName;
+               firstName = value;
             }
         
         }
 
-        public string GetLastName
+        public string LastName
         {
             get
             {
-                return this.lastName;
+                return lastName;
             }
 
             set
             {
-                value = this.lastName;
+               lastName = value;
             }
 
         }
 
-        public string GetEmail
+        public string Email
         {
             get
             {
-                return this.emailAddress;
+                return emailAddress;
             }
 
             set
             {
-                value = this.emailAddress;
+                emailAddress = value;
             }
 
         }
 
-        public int GetRegistrationNumber
+        public int RegistrationNumber
         {
             get
             {
@@ -78,31 +77,32 @@ namespace TheSweepStakesProject
 
             set
             {
-                value = registrationNumber;
+                registrationNumber = value;
 
             }
         }
-        public void FirstName()
+        public void TheFirstName()
         {
             Console.WriteLine("Enter Your First Name");
-            firstName = Console.ReadLine();
+            this.FirstName = Console.ReadLine();
         }
 
-        public void LastName()
+        public void TheLastName()
         {
             Console.WriteLine("Enter Your Last Name");
-            lastName = Console.ReadLine();
+            this.LastName = Console.ReadLine();
         }
 
-        public void Email()
+        public void TheEmail()
         {
             Console.WriteLine("Enter Your Email Address");
-            emailAddress = Console.ReadLine();
+            this.Email = Console.ReadLine();
         }
 
-        public void RegistrationNumber()
+        public void TheRegistrationNumber()
         {
-                registrationNumber = random.Next(0, 1000);
+Random random = new Random();
+                this.RegistrationNumber = random.Next(0, 1000);
        }
 
 

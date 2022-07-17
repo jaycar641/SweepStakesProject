@@ -18,8 +18,7 @@ namespace TheSweepStakesProject
             ChooseManager();
         }
             
-           
-        public Sweepstake sweepValue
+            public Sweepstake sweepValue
         {
             get
             {
@@ -59,9 +58,10 @@ namespace TheSweepStakesProject
 
         public void CreateManager(ISweepstakesManager manager)
         {
+            
            manager.InsertSweepstake(this.sweepstake);
             
-           this.sweepstake = manager.GetSweepStake ();    
+           this.sweepstake = manager.GetSweepStake (this.sweepstake.name);    
             this.sweepstake.Complete= true;
             manager.InsertSweepstake(this.sweepstake);
             

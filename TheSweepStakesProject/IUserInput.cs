@@ -8,13 +8,13 @@ namespace TheSweepStakesProject
 {
     interface IUserInput
     {
-        void FirstName();
+        void TheFirstName();
 
-        void LastName();
+        void TheLastName();
 
-        void Email();
+        void TheEmail();
 
-        void RegistrationNumber();
+        void TheRegistrationNumber();
         
 
     }

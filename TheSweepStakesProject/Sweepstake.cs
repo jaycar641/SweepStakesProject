@@ -10,7 +10,7 @@ namespace TheSweepStakesProject
     {
         public string name;
         Dictionary<int, Contestant> contestants = new Dictionary<int, Contestant>();
-        Random random = new Random();
+       
        private bool complete = false;
 
        public int numberOfContestants;
@@ -18,6 +18,7 @@ namespace TheSweepStakesProject
         public Sweepstake(string name)
         {
             this.name = name;
+             Random random = new Random();
            this.numberOfContestants = random.Next(0, 20);
             
         }
@@ -31,16 +32,23 @@ namespace TheSweepStakesProject
 
             set
             {
-                value = complete;
+                complete = value;
 
             }
         }
 
+
+        
+        
         public void StartSweepstake()
         {
+             Console.WriteLine("There are " + numberOfContestants + " number of Contestants");
+            
             for (int i = 0; i < numberOfContestants; i++)
             {
+                int regNumber = i + 1;
                 Contestant contestant = new Contestant();
+                Console.WriteLine("Contestant #" + regNumber + " is " + contestant.FirstName + " " + contestant.LastName);
                 RegisterContestant(contestant);
 
             }
@@ -52,36 +60,38 @@ namespace TheSweepStakesProject
 
         public void RegisterContestant(Contestant contestant)
         {
-            contestants.Add(contestant.GetRegistrationNumber, contestant);
-            Console.WriteLine("Congratulations " + contestant.GetFirstName + " " + "you are now registered");
-            Console.WriteLine("Your registration number is " + contestant.GetRegistrationNumber);
+            contestants.Add(contestant.RegistrationNumber, contestant);
+            Console.WriteLine("Congratulations " + contestant.FirstName + " " + "you are now registered");
+            Console.WriteLine("Your registration number is " + contestant.RegistrationNumber);
 
         }
 
         public Contestant PickWinner()
         {
+            Random random = new Random ();
+            Contestant contestant = new Contestant();   
             int contestantNumber = random.Next(0, numberOfContestants);
             int count = 0;
-            Contestant winner = null;
+            contestant = null;
             foreach (int key in contestants.Keys)
             {
-                int regNumber = contestants[key].GetRegistrationNumber;
+                int regNumber = contestants[key].RegistrationNumber;
                 if (count == contestantNumber)
                 {
-                    winner = contestants[key];
-                    return winner;
+                    contestant = contestants[key];
+                    return contestant;
                 }
                 count++;
              }
-            return winner;
+            return contestant;
 
         }
 
         public void PrintContestantInfo(Contestant contestant)
         {
-            Console.WriteLine("And the winner is.........." + contestant.GetFirstName + " " + contestant.GetLastName);
-            Console.WriteLine("Email " + contestant.GetEmail);
-            Console.WriteLine("Registration Number " + contestant.GetRegistrationNumber);
+            Console.WriteLine("And the winner is.........." + contestant.FirstName + " " + contestant.LastName);
+            Console.WriteLine("Email " + contestant.Email);
+            Console.WriteLine("Registration Number " + contestant.RegistrationNumber);
             Console.ReadKey();
         }
 
