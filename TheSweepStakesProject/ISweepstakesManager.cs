@@ -10,7 +10,7 @@ namespace TheSweepStakesProject
     {
        void InsertSweepstake(Sweepstake sweepstakes);
 
-       Sweepstake GetSweepStake();
+       Sweepstake GetSweepStake(string name);
 
     }
 }

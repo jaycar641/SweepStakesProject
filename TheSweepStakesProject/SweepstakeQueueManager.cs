@@ -18,7 +18,7 @@ namespace TheSweepStakesProject
 
         }
 
-        public Sweepstake GetSweepStake()
+        public Sweepstake GetSweepStake(string name)
         {
 
             Sweepstake sweepstake = sweepstakeList.Dequeue();

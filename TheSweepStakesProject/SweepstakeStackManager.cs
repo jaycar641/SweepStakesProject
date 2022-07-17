@@ -18,12 +18,13 @@ namespace TheSweepStakesProject
             
         }
 
-        public Sweepstake GetSweepStake()
+        public Sweepstake GetSweepStake(string name)
         {
-            Sweepstake sweepstake = sweepstakeList.Pop();
-           sweepstake.StartSweepstake();
+            Sweepstake replaced = new Sweepstake (name);
+            replaced = sweepstakeList.Pop();
+           replaced.StartSweepstake();
 
-            return sweepstake;
+            return replaced;
         }
 
     }
