@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +10,7 @@ namespace TheSweepStakesProject
     {
         static void Main(string[] args)
         {
+            //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
             Marketing marketing = new Marketing();
           
 
